@@ -13,7 +13,10 @@ const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api
   //},
 //});
 const API = axios.create({
-  baseURL: process.env.REACT_APP_API_URL
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
 // Automatically attach JWT token from localStorage
